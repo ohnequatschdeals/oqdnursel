@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "save": "git add . && git commit -m 'update' && git push origin main"
+    "save": "sh -c 'git add . && git commit -m \"$1\" && git push origin main' --"
   },
   "dependencies": {
     "next": "15.5.3",
