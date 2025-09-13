@@ -2,7 +2,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class", // ✅ richtiger Wert (kein Array!)
+  darkMode: "class",
   content: [
     "./src/app/**/*.{ts,tsx}",
     "./src/components/**/*.{ts,tsx}",
@@ -32,5 +32,4 @@ const config: Config = {
   },
   plugins: [],
 };
-
 export default config;
