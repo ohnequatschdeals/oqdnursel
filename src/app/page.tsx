@@ -1,103 +1,135 @@
-import Image from "next/image";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { OqdButton } from "@/components/ui/OqdButton";
+import { DealCard } from "@/components/ui/DealCard";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-oq-bg text-white">
+      {/* Hero Section */}
+      <SectionWrapper id="hero" background="gradient" className="text-center">
+        <h1 className="text-5xl md:text-7xl font-extrabold bg-oq-gradient bg-clip-text text-transparent drop-shadow-lg">
+          Ihre digitale Beraterin – mit menschlicher Intuition.
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <p className="mt-6 text-lg text-oq-muted max-w-2xl mx-auto">
+          Ehrliche Vergleiche & 24/7 KI-Beratung für Internet, Strom, TV,
+          Versicherungen & mehr.
+        </p>
+
+        <div className="mt-10 flex gap-4 justify-center">
+          <OqdButton>Jetzt Angebote entdecken</OqdButton>
+          <OqdButton variant="outlineTeal">Beratung starten</OqdButton>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <div className="mt-12 flex flex-wrap gap-8 justify-center text-sm text-oq-muted">
+          <div className="flex items-center gap-2">
+            <img src="/icons/shield.png" alt="DSGVO" className="w-6 h-6" />
+            DSGVO-konform
+          </div>
+          <div className="flex items-center gap-2">
+            <img src="/icons/rocket.png" alt="Trusted" className="w-6 h-6" />
+            Trusted Beratung
+          </div>
+          <div className="flex items-center gap-2">
+            <img src="/icons/bulb.png" alt="Support" className="w-6 h-6" />
+            24/7 erreichbar
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Warum wir Section */}
+      <SectionWrapper id="warum-wir" background="dark" className="text-center">
+        <h2 className="text-4xl font-bold bg-oq-gradient bg-clip-text text-transparent">
+          Warum OhneQuatschDeals?
+        </h2>
+        <p className="mt-4 text-oq-muted max-w-2xl mx-auto">
+          Weil wir keine versteckten Kosten, kein Bullshit und nur klare Empfehlungen liefern.
+        </p>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-oq-bg2 shadow-md">
+            <img src="/icons/shield.png" alt="Ehrlich" className="w-12 h-12" />
+            <h3 className="text-xl font-semibold">100% Ehrlich</h3>
+            <p className="text-oq-muted text-sm">
+              Alle Angebote transparent erklärt, ohne versteckte Klauseln.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-oq-bg2 shadow-md">
+            <img src="/icons/puzzle.png" alt="Individuell" className="w-12 h-12" />
+            <h3 className="text-xl font-semibold">Individuell</h3>
+            <p className="text-oq-muted text-sm">
+              Empfehlungen basieren auf deinem Bedarf – nicht auf Werbung.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-oq-bg2 shadow-md">
+            <img src="/icons/bulb.png" alt="Support" className="w-12 h-12" />
+            <h3 className="text-xl font-semibold">24/7 Beratung</h3>
+            <p className="text-oq-muted text-sm">
+              Dein digitaler Assistent ist jederzeit für dich da.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Deals Section */}
+      <SectionWrapper id="deals" background="gradient" className="text-center">
+        <h2 className="text-4xl font-bold bg-oq-gradient bg-clip-text text-transparent">
+          Unsere Top-Deals
+        </h2>
+        <p className="mt-4 text-oq-muted max-w-2xl mx-auto">
+          Wähle aus den besten Angeboten für Internet & Strom – fair und transparent.
+        </p>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+          <DealCard
+            provider="Vodafone"
+            logo="/icons/rocket.png"
+            title="GigaZuhause 250 Cable"
+            price="29,99 € / Monat"
+            features={[
+              "250 Mbit/s Download",
+              "50 Mbit/s Upload",
+              "24 Monate Laufzeit",
+              "WLAN Router inklusive",
+            ]}
+            link="https://example.com/vodafone"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+
+          <DealCard
+            provider="Telekom"
+            logo="/icons/shield.png"
+            title="Magenta Zuhause L"
+            price="39,95 € / Monat"
+            features={[
+              "100 Mbit/s Download",
+              "40 Mbit/s Upload",
+              "Festnetz Flat",
+              "Top Netzabdeckung",
+            ]}
+            link="https://example.com/telekom"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+
+          <DealCard
+            provider="O2"
+            logo="/icons/puzzle.png"
+            title="O2 Home XL"
+            price="34,99 € / Monat"
+            features={[
+              "500 Mbit/s Download",
+              "50 Mbit/s Upload",
+              "Flex-Tarif verfügbar",
+              "Kombi-Vorteil möglich",
+            ]}
+            link="https://example.com/o2"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 }
