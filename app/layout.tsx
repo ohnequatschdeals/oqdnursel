@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Header from "./Header";
 
 export const metadata: Metadata = {
-  title: "OhneQuatschDeals",
-  description: "Dein smarter Vergleich & Beratung für Internet, Strom, Versicherungen und mehr.",
+  title: "OhneQuatschDeals.de",
+  description: "Ihre digitale Beraterin – mit menschlicher Intuition.",
 };
 
 export default function RootLayout({
@@ -13,8 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className="bg-brand-hero text-brand-textlight antialiased">
-        {children}
+      <body className="bg-[#0E0F1A] text-white antialiased">
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
