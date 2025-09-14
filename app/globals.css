@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global */
+body { @apply bg-[#0E0F1A] text-white antialiased; }
+
+/* Brand: Text-Gradient (Türkis stark von 30–60%) */
+.text-brand-gradient {
+  background: linear-gradient(
+    to right,
+    #ec4899 0%,     /* Pink */
+    #a855f7 18%,    /* Lila */
+    #22d3ee 30%,    /* Türkis früher */
+    #22d3ee 60%,    /* Türkis dominiert */
+    #3b82f6 72%,    /* Blau */
+    #1e3a8a 85%,    /* Dunkelblau */
+    #1e3a8a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Feiner Glow, betont besonders Türkis */
+.glow-cyan {
+  filter: drop-shadow(0 0 14px rgba(34,211,238,0.35))
+          drop-shadow(0 2px 14px rgba(0,0,0,0.45));
+}
+
+/* Hero-Spotlight hinter der Headline */
+.hero-spotlight { position: relative; }
+.hero-spotlight::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 52%;
+  transform: translate(-50%, -50%);
+  width: clamp(260px, 52vw, 720px);
+  height: clamp(140px, 24vw, 360px);
+  background: radial-gradient(closest-side, rgba(34,211,238,0.28), rgba(34,211,238,0) 70%);
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CTA-Button mit gleichem Brand-Verlauf (Türkis betont) */
+.btn-brand-gradient {
+  background: linear-gradient(
+    to right,
+    #ec4899 0%,
+    #a855f7 18%,
+    #22d3ee 30%,
+    #22d3ee 60%,
+    #3b82f6 72%,
+    #1e3a8a 85%,
+    #1e3a8a 100%
+  );
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  display: inline-block;
+  transition: opacity .2s ease;
+}
+.btn-brand-gradient:hover { opacity: .9; }
+
+/* Optional: Gradient-Linie (Header/Footer) */
+.border-brand-gradient {
+  border-image: linear-gradient(to right, #ec4899, #a855f7, #22d3ee, #3b82f6, #1e3a8a) 1;
+}
+
+.btn-brand-gradient {
+  background: linear-gradient(
+    to right,
+    #ec4899 0%,
+    #a855f7 18%,
+    #22d3ee 30%,
+    #22d3ee 60%,
+    #3b82f6 72%,
+    #1e3a8a 85%,
+    #1e3a8a 100%
+  );
+  color: #fff;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  border-radius: 0.5rem;     /* rounded-lg */
+  display: inline-block;
+  transition: opacity .2s ease;
+}
+
+.btn-brand-gradient {
+  background: linear-gradient(
+    to right,
+    #ec4899 0%,
+    #a855f7 18%,
+    #22d3ee 30%,
+    #22d3ee 60%,
+    #3b82f6 72%,
+    #1e3a8a 85%,
+    #1e3a8a 100%
+  );
+  color: #fff;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem; /* nur Innenabstand */
+  border-radius: 0.5rem;
+  display: inline-block;     /* Breite = Text */
+  width: auto;               /* Länge passt sich an */
+  transition: opacity .2s ease;
+}
+
+.btn-brand-gradient {
+  background: linear-gradient(
+    to right,
+    #ec4899 0%,
+    #a855f7 18%,
+    #22d3ee 30%,
+    #22d3ee 60%,
+    #3b82f6 72%,
+    #1e3a8a 85%,
+    #1e3a8a 100%
+  );
+  color: #fff;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  border-radius: 0.5rem;
+  display: inline-block;     /* wichtig: nicht block */
+  width: auto;               /* passt sich Text an */
+  transition: opacity .2s ease;
+}
+
+.btn-outline-brand {
+  @apply px-5 py-2.5 rounded-lg font-semibold border-2 text-cyan-400 transition inline-block w-auto;
+  border-color: #22d3ee;             /* Türkis-Rahmen */
+  background-color: rgba(17,24,39,0.8); /* dunkler Hintergrund (Slate-900/80) */
+}
+.btn-outline-brand:hover {
+  background-color: #22d3ee; /* Türkis-Füllung */
+  color: #0E0F1A;            /* Schwarze Schrift beim Hover */
+}
+
+/* === Animationen für Hamburger Menu === */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeSlideDown {
+  animation: fadeSlideDown 0.4s ease-out forwards;
+}
+
+/* === Animationen für Hamburger Menu === */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fadeSlideDown {
+  animation: fadeSlideDown 0.4s ease-out forwards;
+}
+
+.animate-fadeSlideUp {
+  animation: fadeSlideUp 0.4s ease-in forwards;
+}
+
+/* === Hamburger Animations === */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fadeSlideDown {
+  animation: fadeSlideDown 0.4s ease-out forwards;
+}
+
+.animate-fadeSlideUp {
+  animation: fadeSlideUp 0.4s ease-in forwards;
+}
+
+/* === Stagger Animation for Menu Links === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* === Zoom-Effekt für Fullscreen Menu === */
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes zoomFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+}
+
+.animate-zoomFadeIn {
+  animation: zoomFadeIn 0.5s ease-out forwards;
+}
+
+.animate-zoomFadeOut {
+  animation: zoomFadeOut 0.5s ease-in forwards;
+}
+
+/* === Solider Login Button === */
+.btn-login-solid {
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+  color: #0E0F1A;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-login-solid:hover {
+  background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+}
